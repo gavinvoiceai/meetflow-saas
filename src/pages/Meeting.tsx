@@ -34,20 +34,20 @@ const Meeting = () => {
   const toggleVideo = () => setIsVideoEnabled(!isVideoEnabled);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-[#1A1F2C] text-white flex flex-col">
       {/* Main content */}
       <div className="flex-1 flex">
         {/* Video area */}
         <div className="flex-1 p-4">
-          <div className="bg-sidebar h-full rounded-lg flex items-center justify-center">
-            <p className="text-muted-foreground">Video preview will appear here</p>
+          <div className="bg-[#222222] h-full rounded-lg flex items-center justify-center border border-[#333333]">
+            <p className="text-gray-400">Video preview will appear here</p>
           </div>
         </div>
 
         {/* Sidebar */}
-        <div className="w-80 bg-sidebar border-l border-sidebar-border p-4">
+        <div className="w-80 bg-[#222222] border-l border-[#333333] p-4">
           <div className="h-full flex flex-col">
-            <h2 className="text-xl font-semibold mb-4">Meeting Chat</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Meeting Chat</h2>
             <div className="flex-1 overflow-y-auto">
               {/* Chat messages will appear here */}
             </div>
@@ -56,32 +56,48 @@ const Meeting = () => {
       </div>
 
       {/* Controls */}
-      <div className="bg-sidebar border-t border-sidebar-border p-4">
+      <div className="bg-[#222222] border-t border-[#333333] p-4">
         <div className="flex justify-center items-center gap-4">
           <Button
             variant="outline"
             size="icon"
             onClick={toggleAudio}
-            className={!isAudioEnabled ? "bg-destructive hover:bg-destructive/90" : ""}
+            className={!isAudioEnabled 
+              ? "bg-destructive hover:bg-destructive/90 border-[#333333]" 
+              : "border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
           >
-            {isAudioEnabled ? <Mic /> : <MicOff />}
+            {isAudioEnabled ? <Mic className="text-[#0EA5E9]" /> : <MicOff />}
           </Button>
           <Button
             variant="outline"
             size="icon"
             onClick={toggleVideo}
-            className={!isVideoEnabled ? "bg-destructive hover:bg-destructive/90" : ""}
+            className={!isVideoEnabled 
+              ? "bg-destructive hover:bg-destructive/90 border-[#333333]" 
+              : "border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
           >
-            {isVideoEnabled ? <Video /> : <VideoOff />}
+            {isVideoEnabled ? <Video className="text-[#0EA5E9]" /> : <VideoOff />}
           </Button>
-          <Button variant="outline" size="icon">
-            <MessageSquare />
+          <Button 
+            variant="outline" 
+            size="icon"
+            className="border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+          >
+            <MessageSquare className="text-[#0EA5E9]" />
           </Button>
-          <Button variant="outline" size="icon">
-            <Settings />
+          <Button 
+            variant="outline" 
+            size="icon"
+            className="border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+          >
+            <Settings className="text-[#0EA5E9]" />
           </Button>
-          <Button variant="outline" size="icon" className="text-primary hover:text-primary">
-            <Wand2 />
+          <Button 
+            variant="outline" 
+            size="icon" 
+            className="border-[#333333] hover:border-[#0EA5E9] text-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+          >
+            <Wand2 className="text-[#0EA5E9]" />
           </Button>
         </div>
       </div>
