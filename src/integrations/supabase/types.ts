@@ -9,7 +9,89 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      meetings: {
+        Row: {
+          created_at: string
+          host_id: string
+          id: string
+          meeting_id: string
+          scheduled_start: string | null
+          status: string | null
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          host_id: string
+          id?: string
+          meeting_id: string
+          scheduled_start?: string | null
+          status?: string | null
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          host_id?: string
+          id?: string
+          meeting_id?: string
+          scheduled_start?: string | null
+          status?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          id: string
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          id: string
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
+      transcriptions: {
+        Row: {
+          content: string
+          id: string
+          meeting_id: string
+          timestamp: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          id?: string
+          meeting_id: string
+          timestamp?: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          id?: string
+          meeting_id?: string
+          timestamp?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transcriptions_meeting_id_fkey"
+            columns: ["meeting_id"]
+            isOneToOne: false
+            referencedRelation: "meetings"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
