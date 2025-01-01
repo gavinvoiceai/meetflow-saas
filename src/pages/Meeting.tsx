@@ -64,7 +64,7 @@ const Meeting = () => {
             onClick={toggleAudio}
             className={!isAudioEnabled 
               ? "bg-destructive hover:bg-destructive/90 border-[#333333]" 
-              : "border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
+              : "bg-[#222222] border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
           >
             {isAudioEnabled ? <Mic className="text-[#0EA5E9]" /> : <MicOff />}
           </Button>
@@ -74,28 +74,28 @@ const Meeting = () => {
             onClick={toggleVideo}
             className={!isVideoEnabled 
               ? "bg-destructive hover:bg-destructive/90 border-[#333333]" 
-              : "border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
+              : "bg-[#222222] border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"}
           >
             {isVideoEnabled ? <Video className="text-[#0EA5E9]" /> : <VideoOff />}
           </Button>
           <Button 
             variant="outline" 
             size="icon"
-            className="border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+            className="bg-[#222222] border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
           >
             <MessageSquare className="text-[#0EA5E9]" />
           </Button>
           <Button 
             variant="outline" 
             size="icon"
-            className="border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+            className="bg-[#222222] border-[#333333] hover:border-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
           >
             <Settings className="text-[#0EA5E9]" />
           </Button>
           <Button 
             variant="outline" 
             size="icon" 
-            className="border-[#333333] hover:border-[#0EA5E9] text-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
+            className="bg-[#222222] border-[#333333] hover:border-[#0EA5E9] text-[#0EA5E9] hover:text-[#0EA5E9] transition-colors"
           >
             <Wand2 className="text-[#0EA5E9]" />
           </Button>
